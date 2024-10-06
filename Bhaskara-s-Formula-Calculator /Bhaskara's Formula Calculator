@@ -1,0 +1,40 @@
+import math
+
+def calculate_roots():
+    print("Bhaskara's Formula Calculator!")
+    print("Please enter the coefficients of your quadratic equation:")
+
+    def get_float_input(message):
+        user_input = input(message).replace(',', '.')
+        return float(user_input)
+
+    a = get_float_input("Enter the value of 'a': ")
+    while a == 0:
+        error_message = ("'a' cannot be 0, as it would result in a linear equation. "
+                         "Please enter a valid value for 'a': ")
+        a = get_float_input(error_message)
+
+    b = get_float_input("Enter the value of 'b': ")
+    c = get_float_input("Enter the value of 'c': ")
+
+    # Calculating delta
+    delta = (b * b - 4 * a * c)
+    result_message = f"The value of Δ (delta) is {delta:.2f}."
+    print(result_message)
+
+    # Checking the nature of the roots
+    if delta > 0:
+        # Two real and distinct roots
+        x1 = (-b + math.sqrt(delta)) / (2 * a)
+        x2 = (-b - math.sqrt(delta)) / (2 * a)
+        print(f"The roots are: x1 = {x1:.2f} and x2 = {x2:.2f}.")
+    elif delta == 0:
+        # One real root
+        x = -b / (2 * a)
+        print(f"There is one real root: x = {x:.2f}")
+    else:
+        # No real roots
+        print("Since Δ is negative, there are no real solutions for the equation.")
+
+if __name__ == "__main__":
+    calculate_roots()
