@@ -2,7 +2,7 @@ import math
 
 def calculate_roots():
     print("Bhaskara's Formula Calculator!")
-    print("Please enter the coefficients of your quadratic equation:")
+    print("Please, enter the coefficients of your quadratic equation:")
 
     def get_float_input(message):
         user_input = input(message).replace(',', '.')
@@ -11,7 +11,7 @@ def calculate_roots():
     a = get_float_input("Enter the value of 'a': ")
     while a == 0:
         error_message = ("'a' cannot be 0, as it would result in a linear equation. "
-                         "Please enter a valid value for 'a': ")
+                         "Please, enter a valid value for 'a': ")
         a = get_float_input(error_message)
 
     b = get_float_input("Enter the value of 'b': ")
